@@ -1,0 +1,46 @@
+body {
+    color: #ede8c3;
+    background-color: #000;
+    text-shadow: -1px -1px 0 #000,
+    2px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    3px 3px 5px #000;
+  font-size: 20pt;
+}
+#actual {
+  left: 10;
+  top: 60;
+  font-size: 90pt;
+  x-color: #fff;
+  color: #ede8c3;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#div::before {
+  color: yellow;
+}
+#code {
+  top: 10;
+  left: 10;
+  color: #fff;
+}
+
+#locinfo {
+  top: 10;
+  left: 300;
+  color: #fff;
+}
+#locinfo::before{
+  content: "(";
+}
+#locinfo::after{
+  content: ")";
+}
+
+#name {
+  top: 10;
+  left: 90;
+}

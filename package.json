@@ -1,0 +1,22 @@
+{
+  "name": "marsclock",
+  "version": "1.0.0",
+  "description": "Clock to tell the time on Mars",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "electron ."
+  },
+  "author": "Phil Ide",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^9.2.0"
+  },
+  "dependencies": {
+    "electron-virtual-keyboard": "^1.0.7",
+    "https": "^1.0.0",
+    "jsftp": "^2.1.3",
+    "socks": "^2.4.1",
+    "systeminformation": "^4.26.10"
+  }
+}

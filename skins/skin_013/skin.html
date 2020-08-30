@@ -1,0 +1,60 @@
+<html>
+<head>
+	<link id=hstyle rel="stylesheet" href="../../style/global.css" type="text/css" />
+	<link id=hstyle rel="stylesheet" href="do_not_edit_or_delete.css" type="text/css" />
+	<script type="text/javascript" src="../../scripts/clock_base.js"></script>
+</head>
+<body>
+<div class=mdiv id=mass_container>
+	<div data-x=data id=mission_enclosure data-fname='mission enclosure'>
+		<div data-x=data id=code data-fname='Experiment ID'></div>
+		<div data-x=data id=mission data-fname='LMST Mission'></div>
+		<div data-x=data id=sstat data-fname='Sols Since Actived'></div>
+		<div data-x=data id=mstat data-fname='Mission Status'></div>
+		<div data-x=data id=active_date data-fname='Date Activated'></div>
+		<div data-x=data id=agency data-fname='Agency'></div>
+		<div data-x=data id=intended-latitude data-fname='Lat (intended)'></div>
+		<div data-x=data id=intended-longitude data-fname='Lon (intended)'></div>
+		<div data-x=data id=intended-latitude-dir data-fname='Lat (intended) Dir Indicator'></div>
+		<div data-x=data id=intended-longitude-dir data-fname='Lon (intended) Dir Indicator'></div>
+		<div data-x=data id=active_days data-fname='Days since Activation'></div>
+	</div>
+	<div data-x=data id=name data-fname='Experiment or location Name'></div>
+	<div data-x=data id=vtype data-fname='Vehicle Type'></div>
+	<div data-x=data id=longitude data-fname='Longitude'></div>
+	<div data-x=data id=longitude-dir data-fname='Lon Direction Indicator'></div>
+	<div data-x=data id=latitude data-fname='Latitude'></div>
+	<div data-x=data id=latitude-dir data-fname='Lat Direction Indicator'></div>
+	<div data-x=data id=locinfo data-fname='Location'></div>
+	<div id=caldata>
+		<div data-x=data id=tyear data-fname="MC Year"></div>
+		<div data-x=data id=tmonth data-fname='MC Month'></div>
+		<div data-x=data id=tsol data-fname='MC Sol'></div>
+		<div data-x=data id=lsubs data-fname='Ls'></div>
+	</div>
+	<div data-x=data id=actual data-fname='LMST Actual'></div>
+	<div data-x=data id=msd data-fname='MSD'></div>
+	<div data-x=data id=mjd data-fname='MJD'></div>
+	<div data-x=data id=notes data-fname='Notes'></div>
+	<div data-x=data id=lsubsasdeg data-fname='Ls as deg min sec'></div>
+	<div data-x=data id=dver data-fname='Data Version'></div>
+	<div data-x=data id=rcount data-fname='Record Count'></div>
+	<div id=sundata>
+		<div data-x=data id=sunrise data-fname='Sunrise'></div>
+		<div data-x=data id=sunset data-fname='Sunset'></div>
+		<div data-x=data id=daylen data-fname='Length of Day'></div>
+		<div data-x=data id=night data-fname='Length of Night'></div>
+		<div data-x=data id=sunclock data-fname='Sun Clock'>
+			<canvas id=scpaint></canvas>
+		</div>
+	</div>
+	<div data-x=data id=ltst data-fname='local true solar time'></div>
+	<div data-x=data id=cpu data-fname='CPU Temp'></div>
+	<!-- please don't make earth_time visible, it'll make teh clock useful and reduce its nerd-value -->
+	<div data-x=data id=earth_time data-fname='Earth Time'></div>
+	<!-- 35 items -->
+	<div id=info></div>
+</div>
+<script type="text/javascript" src="../../scripts/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+{
+	"name"	: "Just the Clock",
+	"bgimg"	: "insight_weather_bg.jpg",
+	"seconds": true
+}

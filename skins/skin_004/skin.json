@@ -1,0 +1,6 @@
+{
+	"name"	: "Watney",
+	"bgimg"	: "martian.jpg",
+	"seconds": true,
+	"degdecimals": 3
+}

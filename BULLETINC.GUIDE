@@ -1,0 +1,24 @@
+
+
+                             Bulletin C
+
+   
+
+        TAI is the atomic time scale of BIPM; its unit interval is exactly 
+ one SI second at sea level. The origin of TAI is such that UT1-TAI is
+ approximately 0 on 1958 January 1. The instability of TAI is about 6 orders
+ of magnitude smaller than that of UT1.The terrestrial Dynamical Time TDT is
+ presently defined as TAI + 32.184s. Discussion is taking place in the IAU 
+ Working Group on Reference Systems (WGRS) about improved definition of time.
+ 
+      
+         UTC is defined by the CCIR Recommendation 460-4 (1986). It differs 
+ from TAI by an integral number of seconds, in such a way that UT1-UTC stays
+ smaller than 0.9s in absolute value. The decision to introduce a leap second
+ in UTC to meet this condition is the responsability of the IERS. According to
+ the CCIR Recommendation, first preference is given to the opportunities at the
+ end of December and June,and second preference to those at the end of March
+ and September. Since the system was introduced in 1972 only dates in June and
+ December have been used.
+   
+

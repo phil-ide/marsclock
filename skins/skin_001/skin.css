@@ -1,0 +1,22 @@
+body {
+    color: #ede8c3;
+    background-color: #000;
+    text-shadow: -1px -1px 0 #000,
+    2px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    3px 3px 5px #000;
+  font-size: 20pt;
+}
+span {
+  padding: 3;
+  padding-left: 5;
+  padding-right: 5;
+  x-border: solid 1px #666;
+}
+span::before {
+  color: yellow;
+}
+span::before {
+  content: attr(data-fname) " ";
+}

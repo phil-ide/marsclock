@@ -1,0 +1,263 @@
+<html>
+<head>
+	<link id=hstyle rel="stylesheet" href="admin.css" type="text/css" />
+	<script type="text/javascript" src="../scripts/marscharts.js"></script>
+	<script type="text/javascript" src="admin.js"></script>
+    <script>
+        var jQuery = $ = require('jquery');
+        require('electron-virtual-keyboard/client')(window, jQuery);
+    </script>
+    <link href="../node_modules/electron-virtual-keyboard/virtual-keyboard.css" type="text/css" rel="stylesheet"/>
+    <!-- You can override the default theme. A mac like theme is available -->
+    <link href="x-node_modules/electron-virtual-keyboard/themes/mac.css" rel="stylesheet" />
+
+	<style>
+		#skins {
+			x-width: 380;
+			x-border: solid 1px #000;
+			display: inline-block;
+		}
+		#missions {
+			width: 380;
+			x-border: solid 1px #000;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+<div class=mdiv>
+	<div class=sidebar>
+		<div id=sbarskins class="optclass sidebar_on" onClick="switchBlock('sbarskins', 'section_skins');">Skins</div>
+		<div id=sbarmiss class=optclass onClick="switchBlock('sbarmiss', 'section_missions');">Missions</div>
+		<div id=sbarloc class=optclass onClick="switchBlock('sbarloc', 'section_locations');">Locations</div>
+		<div id=sbarimg class=optclass onClick="switchBlock('sbarimg', 'section_images');">Background Image</div>
+		<div id=sother class=optclass onClick="switchBlock('sother', 'section_other');">Other</div>
+		<div id=manufacture class="optclass manufacturetag" onClick="switchBlock('manufacture', 'section_info');">Info</div>
+	</div>
+	<div class=topbar align=right>
+		<div class=button onClick="abort();"> Abort </div><div class=button onClick="saveConfig();">&nbsp; Save & Exit &nbsp;</div>
+	</div>
+	<div id=section_skins class="blocksect mars_th">
+
+	</div>
+	<div id=section_missions class="blocksect mars_th">
+		<table>
+			<tr>
+				<td>Select Mission:</td>
+				<td>
+					<select id=missionlist></select> &nbsp; <input type=button value='Set Mission' onClick='selectMission();' /> &nbsp; (overrides Location)
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<br><br>
+					<i>Don't forget to 'Save &amp; Exit' to commit changes</i>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id=section_locations class="blocksect mars_th">
+
+			<table>
+				<tr>
+					<th>Coordinates</th>
+					<td>
+						<input id=lach class="alignRight" type="text" size=10 placeholder="0 to 90">&deg;&nbsp;
+						<!--
+						<input class=input type=number id=lach size=5 min=0 max=90 placeholder='0-90'>.<input class=input type=number id=lacl size=5>&deg;
+						-->
+						<select id=north>
+							<option value='N'>N</option>
+							<option value='S'>S</option>
+						</select>
+						<input id=loch class="alignRight" type="text" size=10  placeholder="0 to 180">&deg;&nbsp;
+						<!--
+						<input class=input type=number id=loch size=5 min=0 max=180 placeholder='0-180'>.<input class=input type=number id=locl size=5>&deg;
+						-->
+						<select id=east>
+							<option value='E'>E</option>
+							<option value='W'>W</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th>Name</th>
+					<td><input class=input type="text" id=locname size=20 maxlength=20></td>
+				</tr>
+				<tr>
+					<th>Description</th>
+					<td><input class=input type=text id=loctext size=30 maxlength=30></td>
+				</tr>
+				<tr>
+					<th></th>
+					<td><input type=button value='Set Location' onClick='useLocation();'> &nbsp; <input type=button value='Save as Preset' onClick='saveAsPreset();'></td>
+				</tr>
+				<tr>
+					<td colspan=2><hr></td>
+				</tr>
+				<tr>
+					<th>Presets</th>
+					<td>
+						<select id=presets>
+						</select> &nbsp; <input type=button value=' Use Preset ' onClick='useLocPreset();'> &nbsp; <input type=button value=' Delete Preset ' onClick='delLocPreset();'>
+					</td>
+				</tr>
+				<tr>
+					<th></th>
+					<td>
+						<br><br>
+						<i>Don't forget to 'Save &amp; Exit' to commit changes</i>
+					</td>
+				</tr>
+			</table>
+
+	</div>
+	<div id=section_images class="blocksect mars_th">
+		<br>
+		<b>Background Image source:</b><br>
+		<blockquote>
+			<label for=bgimage_skin><input type=radio name=bgimage value='skin' 	id=bgimage_skin> Skin</label><br>
+			<label for=bgimage_img><input type=radio name=bgimage value='bgimg' 	id=bgimage_img> Selected Background Image</label><br>
+			<label for=bgimage_mmap><input type=radio name=bgimage value='mcmap' 	id=bgimage_mmap> Mars Chart (USGS/MOLA)</label><br>
+			<label for=bgimage_tmap><input type=radio name=bgimage value='tcmap' 	id=bgimage_tmap> Mars Chart (USGS/True Colour)</label><br>
+			<label for=bgimage_rand><input type=radio name=bgimage value='rand' 	id=bgimage_rand> Random Image Slideshow</label><br>
+
+			
+			<span class=disabled>-- Active Maps --</span><br>
+			<label for=bgimage_vkmap class=disabled><input disabled type=radio name=bgimage value='vkmap' 	id=bgimage_vkmap> Viking Color Mosaic</label><br>
+			<label for=bgimage_mchs class=disabled><input disabled type=radio name=bgimage value='mchs' 	id=bgimage_mchs> MOLA Color Hillshade</label><br>
+			<label for=bgimage_ifrd class=disabled><input disabled type=radio name=bgimage value='irday' 	id=bgimage_ifrd> Infrared Day</label><br>
+			
+			
+		</blockquote>
+		<div id=section_images_images></div>
+	</div>
+	<div id=section_other class="blocksect mars_th">
+		<p>
+			<label for=refrate>Clock Refresh Rate <select id=refrate name=refrate></select> (Ms = Martian Seconds)</label>
+		</p>
+		<hr>
+		<p>
+			<label for=ftpcb>Use FTP Proxy: <input type=checkbox id=ftpcb name=ftpcb></label> &nbsp; 
+			<label for=ftpip>IP Address: <input type=text id=ftpip name=ftpip style='max-width: 8.5em;'></label> &nbsp; &nbsp; 
+			<label for=ftpport>    Port: <input type=text id=ftpport name=ftpport style='max-width: 4em;'></label>
+		</p>
+		<hr>
+		<p>
+			Window
+			<label for=winw>Width: <input type=text id=winw name=winw style='max-width: 4em;'></label> &nbsp; &nbsp; 
+			<label for=winw>Height: <input type=text id=winh name=winh style='max-width: 4em;'></label> &nbsp; &nbsp; 
+			<input type=button value=' Restore Defaults ' onClick='defaultWinDim();'>
+		</p>
+		<hr>
+		<p>
+			<label for=slref>Slideshow Refresh Rate: <input type=text id=slref name=slref style='max-width: 4em;'> minutes</input>
+		</p>
+		<p>
+			<br><br>
+			<blockquote><blockquote>
+				<i>Don't forget to 'Save &amp; Exit' to commit changes</i>
+			</blockquote></blockquote>
+		</p>
+	</div>
+
+	<div id=section_info class="blocksect mars_th">
+		<center>
+			<h2 id=infotitle>Pi-Mars</h2>
+			<p>
+				&copy; Phil Ide, 2020. All Rights Reserved
+			</p>
+			<p>Many thanks to JPL, the Goddard Institute for Space Studies, NASA in general and the Planetary Society. Especial thanks to: Michael Allison and Megan McEwen for their excellent articles on timing algorithms; James Tauber for modelling the time conversion code in Javascript; Robert B. Schmunk for Mars24. There are others who deserve a mention, but I've forgotten their names. Shame on me.
+			</p>
+			<p>https://philip-p-ide.uk</p>
+			<div class=hardy>
+				<div class=hardy-top>These images reproduced by gracious permission</div>
+				<img src="../images/backgrounds/83622928_10158438127458684_9198582811631279626_n.jpg" height=70 />
+				<img src="../images/backgrounds/106206841_10158438127693684_954277760001627919_n.jpg" height=70 />
+				<img src="../images/backgrounds/106215823_10158438127393684_5924513441277955402_n.jpg" height=70 />
+				<img src="../images/backgrounds/106278476_10158438127758684_1698263526209174052_n.jpg" height=70 />
+				<img src="../images/backgrounds/106447829_10158438127573684_3585055303834423310_o.jpg" height=70 /><br>
+				&copy; David A. Hardy www.astroart.org
+			</div>
+		</center>
+	</div>
+
+	<pre id=info></pre>
+	<div class=pimars_icon><img src='../images/Mars_89140.png' width=55></div>
+	<div class=pimars_icon2><b><i>&pi;Mars</i></b></div>
+
+</div>
+<script>
+	//document.getElementById('infotitle').innerHTML += ' v'+piMarsBuild();
+	document.getElementById('infotitle').innerHTML += ' v'+piMarsSubVer();
+	$.fn.keyboard_layouts['en-us:numpad'] = {
+	    'normal': [
+	        ['7 8 9'],
+	        ['4 5 6'],
+	        ['1 2 3'],
+	        ['. 0 {backspace:*}']
+	    ],
+	    'shift': [
+	        ['7 8 9'],
+	        ['4 5 6'],
+	        ['1 2 3'],
+	        ['. 0 {backspace:*}']
+	    ]
+	}
+
+	$('input:text#lach').keyboard({
+		theme: "theme-black",
+		layout: "en-us:numpad"
+	})
+	$('input:text#loch').keyboard({
+		theme: "theme-black",
+		layout: "en-us:numpad"
+	})
+
+	$('input:text#locname').keyboard({
+		theme: "theme-black"
+	})
+	$('input:text#loctext').keyboard({
+		theme: "theme-black"
+	})
+	
+	$('input:text#ftpip').keyboard({
+		theme: "theme-black",
+		layout: "en-us:numpad"
+	})
+	$('input:text#ftpport').keyboard({
+		theme: "theme-black",
+		layout: "en-us:numpad"
+	})
+
+	$('input:text#winw').keyboard({
+		theme: "theme-black",
+		layout: "en-us:numpad"
+	})
+	$('input:text#winh').keyboard({
+		theme: "theme-black",
+		layout: "en-us:numpad"
+	})
+
+	$('input:text#slref').keyboard({
+		theme: "theme-black",
+		layout: "en-us:numpad"
+	})
+
+	adminPrepare();
+</script>
+<style>
+	.hardy {
+		font-size: 12pt;
+		border: solid 1px #ccc;
+		padding: 5px;
+		margin-right: 10px;
+	}
+	.hardy-top {
+		padding-bottom: 3px;
+	}
+</style>
+
+</body>
+</html>

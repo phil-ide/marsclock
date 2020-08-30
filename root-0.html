@@ -1,0 +1,59 @@
+<html>
+<head>
+	<!-- default skin is skin1 -->
+	<link id=hstyle rel="stylesheet" href="style/global.css" type="text/css" />
+	<style>
+		body {
+			background-color: #303030;
+			color: #c0c0c0;
+			font-size: 75pt;
+		}
+		.content {
+			position: fixed !important;
+			position: absolute;
+			text-align: center;
+			vertical-align: middle;
+			top: 150;
+			left: 0;
+			width: 100vw;
+			text-shadow: -1px -1px 0 #000,
+			    2px -1px 0 #000,
+			    -1px 1px 0 #000,
+			    1px 1px 0 #000,
+			    3px 3px 5px #000;
+
+		}
+	</style>
+</head>
+<body>
+<div class=mdiv>
+	<center>
+		<div class=content>
+			Initialising...
+		</div>
+	</center>
+</div>
+<script>
+	const remote = require('electron').remote;
+	var ocRenderer = require('electron').ipcRenderer;
+
+	bootProceed = remote.getGlobal('bootProceed');
+	config = remote.getGlobal('config');
+
+	skin = config.skin;
+	
+	if( bootProceed ) loadSkin();
+	else {
+		ocRenderer.on('loadskin', (event, arg) => {
+			loadSkin();
+		});
+		ocRenderer.send('ready-to-skin', "hello" );	
+	} 
+
+	function loadSkin(){
+		window.location.replace('skins/'+skin+'/skin.html');
+	}
+
+</script>
+</body>
+</html>

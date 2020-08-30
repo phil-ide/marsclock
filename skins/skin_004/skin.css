@@ -1,0 +1,112 @@
+body {
+    color: #ede8c3;
+    background-color: #000;
+    text-shadow: -1px -1px 0 #000,
+    2px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    3px 3px 5px #000;
+  font-size: 20pt;
+}
+
+#actual {
+  left: 25;
+  top: 240;
+  font-size: 160pt;
+  x-color: #fff;
+  color: #ede8c3;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#code {
+  top: 10;
+  left: 10;
+  color: #fff;
+}
+
+#name {
+  top: 10;
+  left: 90;
+}
+
+#sstat::before {
+	content: "sol ";
+	color: #ede8c3;
+}
+#sstat::after{
+	content: " of mission";
+	color: #ede8c3;
+}
+#sstat {
+	top: 40;
+	left: 10;
+	color: #fff;
+}
+
+#mstat::before{
+	content: "Mission status: ";
+	color: #ede8c3;
+}
+#mstat{
+	top: 70;
+	left: 10;
+}
+#active_date::before{
+	content: "Landed ";
+	color: #ede8c3;
+}
+#active_date {
+	color: #fff;
+	top: 100;
+	left: 10;
+}
+
+#agency {
+	top: 10;
+	left: 350;
+	color: #fff;
+}
+
+#userloc {
+	top: 10;
+	left: 500;
+	x-font-size: 16pt;
+}
+
+#notes {
+	top: 40;
+	left: 350;
+	font-size: 16pt;
+	color: #fff;
+	color: yellow;
+}
+
+#usercal{
+	top: 160;
+	left: 10;
+	color: #fff;
+}
+#tyear::before{
+	content: "yr: ";
+	color: #ede8c3;
+}
+#tmonth::before{
+	content: "mth: ";
+	color: #ede8c3;
+}
+#tsol::before{
+	content: "sol: ";
+	color: #ede8c3;
+}
+#usercaltitle {
+	color: #ede8c3;
+}
+#lsubs{
+	color: #fff;
+}
+#lsubs::before{
+	content: "Ls: ";
+	color: #ede8c3;
+}

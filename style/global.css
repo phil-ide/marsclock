@@ -1,0 +1,78 @@
+body {
+  x-position: fixed !important;
+  x-position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  user-select: none;
+  font-size: 22pt;
+  overflow: hidden;
+  user-select: none;
+}
+.bgimg {
+	position: fixed !important;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 800;
+	height: 480;
+	padding: 0;
+	margin: 0;
+	background-color: #ccc;
+
+}
+.secs {
+  display: inline-block;
+}
+.mdiv {
+	position: fixed !important;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	top: 0;
+	right: 0;
+	width: 100vw;
+	height: 100vh;
+	padding: 0;
+	margin-top: 0;
+}
+div[data-x]{
+	position: fixed !important;
+	position: absolute;
+	display: inline-block;
+	left: 105vw;
+}
+#gear {
+	position: fixed !important;
+	position: absolute;
+	top: 5;
+	right: 5;
+	z-index: 20;
+	color: #fff;
+	max-width: 80px;
+}
+#gear a {
+	x-cursor: none;
+}
+#gear a img {
+	max-width: 40px;
+}
+#zoom{
+	position: fixed !important;
+	position: absolute;
+	top: 5;
+	left: 725;
+	z-index: 20;
+	color: #fff;
+	max-width: 80px;
+}
+#scpaint {
+  position: relative;
+}
+.map {
+	width: 100%;
+	height: 480px;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

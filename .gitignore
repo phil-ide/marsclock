@@ -1,3 +1,7 @@
+# Git
+.gitignore
+.gitattributes
+
 # Logs
 logs
 *.log
