@@ -3,7 +3,7 @@
 
 Although this is intended for the Raspberry Pi, it'll run on any platform that supports Nodejs and Electron.
 
-Full configuration options for the RPI and installation instructions can be found [here](https://philip-p-ide.uk/doku.php/blog/articles/raspberry_pi/mclock)
+Full configuration options for the RPI and installation instructions can be found [here](https://philip-p-ide.uk/doku.php/blog/articles/raspberry/phys_marsclock/pi_marsv1_install)
 
 For other platforms, the process summed up is to perform the following steps:
   * install nodejs if required
