@@ -26,7 +26,7 @@ The program updates automatically when new data is available.
 
 ## Samples
 
-(https://philip-p-ide.uk/lib/exe/fetch.php/blog/articles/raspberry/phys_marsclock/bg_mola_map2.png)
+!(https://philip-p-ide.uk/lib/exe/fetch.php/blog/articles/raspberry/phys_marsclock/bg_mola_map2.png)
 
 (https://philip-p-ide.uk/lib/exe/fetch.php/blog/articles/raspberry/phys_marsclock/bg_viking_map.png)
 
