@@ -26,12 +26,12 @@ The program updates automatically when new data is available.
 
 ## Samples
 
-!(https://philip-p-ide.uk/lib/exe/fetch.php/blog/articles/raspberry/phys_marsclock/bg_mola_map2.png)
+![MOLA map](https://philip-p-ide.uk/lib/exe/fetch.php/blog/articles/raspberry/phys_marsclock/bg_mola_map2.png)
 
-(https://philip-p-ide.uk/lib/exe/fetch.php/blog/articles/raspberry/phys_marsclock/bg_viking_map.png)
+![Viking map](https://philip-p-ide.uk/lib/exe/fetch.php/blog/articles/raspberry/phys_marsclock/bg_viking_map.png)
 
-(https://philip-p-ide.uk/lib/exe/fetch.php/blog/articles/raspberry/phys_marsclock/skin_minimal.png)
+![Minimal Skin](https://philip-p-ide.uk/lib/exe/fetch.php/blog/articles/raspberry/phys_marsclock/skin_minimal.png)
 
-(https://philip-p-ide.uk/lib/exe/fetch.php/blog/articles/raspberry/phys_marsclock/skin_mission1.png)
+![Mission 1](https://philip-p-ide.uk/lib/exe/fetch.php/blog/articles/raspberry/phys_marsclock/skin_mission1.png)
 
-(https://philip-p-ide.uk/lib/exe/fetch.php/blog/articles/raspberry/phys_marsclock/skin_mission2.png)
+![Mission 2](https://philip-p-ide.uk/lib/exe/fetch.php/blog/articles/raspberry/phys_marsclock/skin_mission2.png)
