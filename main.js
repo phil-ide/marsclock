@@ -4,6 +4,7 @@
 const __OC_DEV_MODE__ = true;
 const { app, BrowserWindow, Menu, MenuItem, ipcMain, dialog, clientRequest, net, clipboard, globalShortcut, webContents, webFrame } = require('electron');
 const nativeImage = require('electron').nativeImage;
+const { exec } = require('child_process');
 const VirtualKeyboard = require('electron-virtual-keyboard');
 const https = require('https');
 const {SocksClient} = require('socks');
@@ -33,7 +34,7 @@ global.isArm7l = release.length > 1;
 conslog('arm: '+global.isArm7l);
 
 /*#######################*/
-global.piMarsVer    = "1.0";
+global.piMarsVer    = "1.1";
 global.piMarsSubver = "0";
 global.piMarsBuild  = "1018";
 global.respath = resources;
@@ -48,6 +49,7 @@ Date.prototype.addDays=function(d){return new Date(this.valueOf()+864E5*d);};
 /*#######################*/
 // make sure we get the previous bulletinc before we attempt to get the next one
 readBulletinC();
+exec('unclutter -idle 1');
 
 app.disableHardwareAcceleration();
 
@@ -75,6 +77,29 @@ ipcMain.on('ready-to-skin', (event, arg ) => {
     preliminaryStartup();
     event.sender.send('loadskin');
 });
+
+ipcMain.on('quit', (event, arg) => {
+    exec('unclutter -idle 1');
+    app.quit();
+});
+
+ipcMain.on('power', (event, arg) => {
+    if( arg == 'shutdown' ) arg += ' now';
+    conslog(arg);
+    exec(arg, (error, data, getter) => {
+        if(error){
+            console.log("error",error.message);
+            return;
+        }
+        if(getter){
+            console.log("data",data);
+            return;
+        }
+        console.log("data",data);
+
+    });
+});
+
 
 function conslog(data){
     console.log(data);

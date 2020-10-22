@@ -394,3 +394,17 @@ function abort(){
 function conslog( data ){
     ocRenderer.send('console', data);
 }
+
+function powerOptions(){
+	var Anodes = document.getElementsByName('powerradio');
+	var result = Array.from(Anodes)
+		       .filter(node => node.checked)
+		       .map(node => node.value)
+		       .pop();
+	if( result == 'quit' ){
+		ocRenderer.send('quit');
+	}
+	else {
+		ocRenderer.send('power', 'sudo '+result);
+	}
+}

@@ -126,7 +126,8 @@ body {
 }
 
 .manufacturetag {
-	top: 100;
+	x-top: 100;
+	top: 59;
 	border-top: solid 1px #aaa;
 }
 #section_info {

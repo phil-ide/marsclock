@@ -1,6 +1,6 @@
 {
   "name": "marsclock",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Clock to tell the time on Mars",
   "main": "main.js",
   "scripts": {

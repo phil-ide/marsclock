@@ -32,6 +32,7 @@
 		<div id=sbarloc class=optclass onClick="switchBlock('sbarloc', 'section_locations');">Locations</div>
 		<div id=sbarimg class=optclass onClick="switchBlock('sbarimg', 'section_images');">Background Image</div>
 		<div id=sother class=optclass onClick="switchBlock('sother', 'section_other');">Other</div>
+		<div id=spower class=optclass onClick="switchBlock('spower', 'section_power');">Power</div>
 		<div id=manufacture class="optclass manufacturetag" onClick="switchBlock('manufacture', 'section_info');">Info</div>
 	</div>
 	<div class=topbar align=right>
@@ -161,7 +162,18 @@
 			</blockquote></blockquote>
 		</p>
 	</div>
-
+	<div id=section_power class="blocksect mars_th">
+		<p>
+			<label for=pradio_quit><input type=radio name=powerradio value=quit id=pradio_quit checked> Quit PiMars</label><br>
+			<label for=pradio_reboot><input type=radio name=powerradio value=reboot id=pradio_reboot> Reboot</label><br>
+			<label for=pradio_shut><input type=radio name=powerradio value=shutdown id=pradio_shut> Shutdown</label><br>
+			<br>
+			<input type=button value=' Exit PiMars ' onClick='powerOptions();'><br>
+			<br>
+			<i>Note: Reboot and Shutdown options only work on linux based platforms (including the Raspberry Pi)<br><br>
+			If Quit is selected and PiMars is under the control of a services manager, it will restart immediately</i>
+		</p>
+	</div>
 	<div id=section_info class="blocksect mars_th">
 		<center>
 			<h2 id=infotitle>Pi-Mars</h2>
@@ -185,7 +197,7 @@
 
 	<pre id=info></pre>
 	<div class=pimars_icon><img src='../images/Mars_89140.png' width=55></div>
-	<div class=pimars_icon2><b><i>&pi;Mars</i></b></div>
+	<div class=pimars_icon2><b><i>PiMars</i></b></div>
 
 </div>
 <script>
