@@ -130,7 +130,7 @@
 			mc = config.coordinates.mc;
 			var chart = calculateMarsChartNumber(piri.actual_lat, piri.actual_lon);
 			mc = chart[5];
-			mc = '../../images/maps/tc/mc'+padlb(mc.toString(),2)+'.png';
+			mc = '../../images/maps/tc/mc'+padlb(mc.toString(),2)+'.jpg';
 			changeBGImage( mc );
 			if( isLowerHalf( chart, piri.actual_lat ) ){
 				document.body.style.backgroundPosition = "bottom left";
