@@ -1,4 +1,6 @@
 # marsclock
+**Warning: I have forked the repository to another location after losing control of this account. The new repo should be used instead of this one, as that is where any updates will occur: [stroggprog/marsclock](https://github.com/stroggprog/marsclock)**
+
  A clock to tell the time on Mars for the Raspberry Pi
 
 Although this is intended for the Raspberry Pi, it'll run on any platform that supports Nodejs and Electron.
